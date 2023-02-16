@@ -1,21 +1,36 @@
+import 'package:controle_gastos/transaction.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
-main() => runApp(ControleGastosApp());
+main() => runApp(const ControleGastosApp());
 
 class ControleGastosApp extends StatelessWidget {
   const ControleGastosApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       home: MyHomeApp(),
     );
   }
 }
 
 class MyHomeApp extends StatelessWidget {
-  const MyHomeApp({super.key});
+  final _transaction = [
+    Transaction(
+      id: "t1",
+      title: "Novo Tênis de Coridda",
+      value: 310.75,
+      date: DateTime.now(),
+    ),
+    Transaction(
+      id: "t2",
+      title: "Conta de luz ",
+      value: 211.30,
+      date: DateTime.now(),
+    ),
+  ];
+
+  MyHomeApp({super.key});
 
   @override
   Widget build(BuildContext context) {
