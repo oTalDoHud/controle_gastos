@@ -1,8 +1,5 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 main() => runApp(ControleGastosApp());
 
@@ -27,16 +24,15 @@ class MyHomeApp extends StatelessWidget {
         title: const Text("Despesas Pessoais"),
       ),
       body: Column(
-        children: [
-          Container(
-            width: double.infinity,
-            child: const Card(
-              elevation: 5,
-              color: Colors.blue,
-              child: Text("Gráfico"),
-            ),
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: const [
+          Card(
+            elevation: 5,
+            color: Colors.blue,
+            child: Text("Gráfico"),
           ),
-          const Card(
+          Card(
             elevation: 5,
             child: Text("Lista de Transações"),
           ),
