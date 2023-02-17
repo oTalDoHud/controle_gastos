@@ -18,7 +18,7 @@ class MyHomeApp extends StatelessWidget {
   final _transaction = [
     Transaction(
       id: "t1",
-      title: "Novo Tênis de Coridda",
+      title: "Novo Tênis de Corrida",
       value: 310.75,
       date: DateTime.now(),
     ),
@@ -53,14 +53,42 @@ class MyHomeApp extends StatelessWidget {
                 child: Row(
                   children: <Widget>[
                     Container(
+                      margin: const EdgeInsets.symmetric(
+                        horizontal: 15,
+                        vertical: 10,
+                      ),
+                      decoration: BoxDecoration(
+                          border: Border.all(
+                        color: Colors.purple,
+                        width: 2,
+                      )),
+                      padding: const EdgeInsets.all(10),
                       child: Text(
                         tr.value.toString(),
+                        style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                          color: Colors.purple,
+                        ),
                       ),
                     ),
                     Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(tr.title),
-                        Text(tr.date.toString()),
+                        Text(
+                          tr.title,
+                          style: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                          ),
+                        ),
+                        Text(
+                          tr.date.toString(),
+                          style: const TextStyle(
+                            color: Colors.grey,
+                            fontSize: 16,
+                          ),
+                        ),
                       ],
                     ),
                   ],
