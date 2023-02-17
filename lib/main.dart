@@ -41,13 +41,34 @@ class MyHomeApp extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: const [
-          Card(
+        children: [
+          const Card(
             elevation: 5,
             color: Colors.blue,
             child: Text("Gráfico"),
           ),
-          Card(
+          Column(
+            children: _transaction.map((tr) {
+              return Card(
+                child: Row(
+                  children: <Widget>[
+                    Container(
+                      child: Text(
+                        tr.value.toString(),
+                      ),
+                    ),
+                    Column(
+                      children: [
+                        Text(tr.title),
+                        Text(tr.date.toString()),
+                      ],
+                    ),
+                  ],
+                ),
+              );
+            }).toList(),
+          ),
+          const Card(
             elevation: 5,
             child: Text("Lista de Transações"),
           ),
