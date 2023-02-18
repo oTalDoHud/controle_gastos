@@ -40,7 +40,6 @@ class MyHomeApp extends StatelessWidget {
         title: const Text("Despesas Pessoais"),
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           const Card(
@@ -65,7 +64,7 @@ class MyHomeApp extends StatelessWidget {
                       )),
                       padding: const EdgeInsets.all(10),
                       child: Text(
-                       "R\$: ${tr.value.toStringAsFixed(2)}",
+                        "R\$: ${tr.value.toStringAsFixed(2)}",
                         style: const TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 20,
@@ -97,9 +96,34 @@ class MyHomeApp extends StatelessWidget {
               );
             }).toList(),
           ),
-          const Card(
+          Card(
             elevation: 5,
-            child: Text("Lista de Transações"),
+            child: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Column(
+                children: [
+                  const TextField(
+                    decoration: InputDecoration(labelText: "Título"),
+                  ),
+                  const TextField(
+                    decoration: InputDecoration(labelText: "Valor (R\$)"),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        ElevatedButton(
+                          onPressed: () => null,
+                          style: TextButton.styleFrom(foregroundColor: Colors.purple, backgroundColor: Colors.white),
+                          child: const Text("Nova Transação"),
+                        ),
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            ),
           ),
         ],
       ),
