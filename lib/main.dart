@@ -1,5 +1,6 @@
 import 'package:controle_gastos/transaction.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 main() => runApp(const ControleGastosApp());
 
@@ -64,7 +65,7 @@ class MyHomeApp extends StatelessWidget {
                       )),
                       padding: const EdgeInsets.all(10),
                       child: Text(
-                        tr.value.toString(),
+                       "R\$: ${tr.value.toStringAsFixed(2)}",
                         style: const TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 20,
@@ -83,7 +84,7 @@ class MyHomeApp extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          tr.date.toString(),
+                          DateFormat("d MMM y").format(tr.date),
                           style: const TextStyle(
                             color: Colors.grey,
                             fontSize: 16,
