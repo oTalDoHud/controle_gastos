@@ -16,6 +16,9 @@ class ControleGastosApp extends StatelessWidget {
 }
 
 class MyHomeApp extends StatelessWidget {
+  final titleController = TextEditingController();
+  final valueController = TextEditingController();
+
   final _transaction = [
     Transaction(
       id: "t1",
@@ -102,11 +105,17 @@ class MyHomeApp extends StatelessWidget {
               padding: const EdgeInsets.all(10.0),
               child: Column(
                 children: [
-                  const TextField(
-                    decoration: InputDecoration(labelText: "Título"),
+                  TextField(
+                    controller: titleController,
+                    decoration: const InputDecoration(
+                      labelText: "Título",
+                    ),
                   ),
-                  const TextField(
-                    decoration: InputDecoration(labelText: "Valor (R\$)"),
+                  TextField(
+                    controller: valueController,
+                    decoration: const InputDecoration(
+                      labelText: "Valor (R\$)",
+                    ),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(10.0),
@@ -115,7 +124,9 @@ class MyHomeApp extends StatelessWidget {
                       children: [
                         ElevatedButton(
                           onPressed: () => null,
-                          style: TextButton.styleFrom(foregroundColor: Colors.purple, backgroundColor: Colors.white),
+                          style: TextButton.styleFrom(
+                              foregroundColor: Colors.purple,
+                              backgroundColor: Colors.white),
                           child: const Text("Nova Transação"),
                         ),
                       ],
