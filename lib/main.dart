@@ -58,6 +58,8 @@ class _MyHomeAppState extends State<MyHomeApp> {
     setState(() {
       _transaction.add(newTransaction);
     });
+
+    Navigator.of(context).pop();
   }
 
   _openTransactionFormModal(BuildContext context) {
