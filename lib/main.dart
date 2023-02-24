@@ -54,19 +54,19 @@ class MyHomeApp extends StatefulWidget {
 }
 
 class _MyHomeAppState extends State<MyHomeApp> {
-  final _transaction = [
-    Transaction(
-      id: "t1",
-      title: "Novo Tênis de Corrida",
-      value: 310.75,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: "t2",
-      title: "Conta de luz ",
-      value: 211.30,
-      date: DateTime.now(),
-    ),
+  final List<Transaction> _transaction = [
+    // Transaction(
+    //   id: "t1",
+    //   title: "Novo Tênis de Corrida",
+    //   value: 310.75,
+    //   date: DateTime.now(),
+    // ),
+    // Transaction(
+    //   id: "t2",
+    //   title: "Conta de luz ",
+    //   value: 211.30,
+    //   date: DateTime.now(),
+    // ),
   ];
 
   _addTransaction(String title, double value) {
