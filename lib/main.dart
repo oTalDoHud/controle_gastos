@@ -18,8 +18,30 @@ class ControleGastosApp extends StatefulWidget {
 class _ControleGastosAppState extends State<ControleGastosApp> {
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: MyHomeApp(),
+    final ThemeData tema = ThemeData();
+    return MaterialApp(
+      home: const MyHomeApp(),
+      theme: tema.copyWith(
+        colorScheme: tema.colorScheme.copyWith(
+          primary: Colors.purple,
+          secondary: Colors.amber,
+        ),
+        textTheme: tema.textTheme.copyWith(
+          titleLarge: const TextStyle(
+            fontFamily: 'OpenSans',
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+            color: Colors.black,
+          ),
+        ),
+        appBarTheme: const AppBarTheme(
+          titleTextStyle: TextStyle(
+            fontFamily: 'OpenSans',
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
     );
   }
 }
@@ -86,10 +108,10 @@ class _MyHomeAppState extends State<MyHomeApp> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          const Card(
+          Card(
             elevation: 5,
-            color: Colors.blue,
-            child: Text("Gráfico"),
+            color: Theme.of(context).colorScheme.primary,
+            child: const Text("Gráfico"),
           ),
           TransactionList(_transaction),
         ],
