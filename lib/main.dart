@@ -29,15 +29,15 @@ class _ControleGastosAppState extends State<ControleGastosApp> {
         textTheme: tema.textTheme.copyWith(
           titleLarge: const TextStyle(
             fontFamily: 'OpenSans',
-            fontSize: 18,
+            fontSize: 16,
             fontWeight: FontWeight.bold,
             color: Colors.black,
           ),
         ),
         appBarTheme: const AppBarTheme(
           titleTextStyle: TextStyle(
-            fontFamily: 'OpenSans',
-            fontSize: 20,
+            fontFamily: 'Quicksand',
+            fontSize: 30,
             fontWeight: FontWeight.bold,
           ),
         ),
