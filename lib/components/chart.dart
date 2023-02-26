@@ -36,7 +36,7 @@ class Chart extends StatelessWidget {
           "value": totalSum,
         };
       },
-    );
+    ).reversed.toList();
   }
 
   double get _weekTotalValue {

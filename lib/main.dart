@@ -65,19 +65,19 @@ class _MyHomeAppState extends State<MyHomeApp> {
     Transaction(
       id: "t1",
       title: "Novo Tênis de Corrida",
-      value: 10,
+      value: 125,
       date: DateTime.now().subtract(const Duration(days: 3)),
     ),
     Transaction(
       id: "t2",
       title: "Conta de luz ",
-      value: 20,
+      value: 269,
       date: DateTime.now().subtract(const Duration(days: 4)),
     ),
     Transaction(
       id: "t3",
       title: "Cartão ",
-      value: 40,
+      value: 469.88,
       date: DateTime.now().subtract(const Duration(days: 5)),
     ),
     Transaction(
