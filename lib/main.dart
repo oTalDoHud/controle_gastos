@@ -80,6 +80,12 @@ class _MyHomeAppState extends State<MyHomeApp> {
       value: 40,
       date: DateTime.now().subtract(const Duration(days: 5)),
     ),
+    Transaction(
+      id: "t3",
+      title: "Lanche",
+      value: 11.30,
+      date: DateTime.now(),
+    ),
   ];
 
   List<Transaction> get _recentTransactions {
