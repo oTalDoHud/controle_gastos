@@ -56,36 +56,36 @@ class MyHomeApp extends StatefulWidget {
 
 class _MyHomeAppState extends State<MyHomeApp> {
   final List<Transaction> _transaction = [
-    Transaction(
-      id: "t0",
-      title: "Conta antiga",
-      value: 400,
-      date: DateTime.now().subtract(const Duration(days: 33)),
-    ),
-    Transaction(
-      id: "t1",
-      title: "Novo Tênis de Corrida",
-      value: 125,
-      date: DateTime.now().subtract(const Duration(days: 3)),
-    ),
-    Transaction(
-      id: "t2",
-      title: "Conta de luz ",
-      value: 269,
-      date: DateTime.now().subtract(const Duration(days: 4)),
-    ),
-    Transaction(
-      id: "t3",
-      title: "Cartão ",
-      value: 469.88,
-      date: DateTime.now().subtract(const Duration(days: 5)),
-    ),
-    Transaction(
-      id: "t3",
-      title: "Lanche",
-      value: 11.30,
-      date: DateTime.now(),
-    ),
+    // Transaction(
+    //   id: "t0",
+    //   title: "Conta antiga",
+    //   value: 400,
+    //   date: DateTime.now().subtract(const Duration(days: 33)),
+    // ),
+    // Transaction(
+    //   id: "t1",
+    //   title: "Novo Tênis de Corrida",
+    //   value: 125,
+    //   date: DateTime.now().subtract(const Duration(days: 3)),
+    // ),
+    // Transaction(
+    //   id: "t2",
+    //   title: "Conta de luz ",
+    //   value: 269,
+    //   date: DateTime.now().subtract(const Duration(days: 4)),
+    // ),
+    // Transaction(
+    //   id: "t3",
+    //   title: "Cartão ",
+    //   value: 469.88,
+    //   date: DateTime.now().subtract(const Duration(days: 5)),
+    // ),
+    // Transaction(
+    //   id: "t3",
+    //   title: "Lanche",
+    //   value: 11.30,
+    //   date: DateTime.now(),
+    // ),
   ];
 
   List<Transaction> get _recentTransactions {
@@ -96,12 +96,12 @@ class _MyHomeAppState extends State<MyHomeApp> {
     }).toList();
   }
 
-  _addTransaction(String title, double value) {
+  _addTransaction(String title, double value, DateTime date) {
     final newTransaction = Transaction(
       id: Random().nextDouble.toString(),
       title: title,
       value: value,
-      date: DateTime.now(),
+      date: date,
     );
 
     setState(() {
