@@ -51,15 +51,21 @@ class Chart extends StatelessWidget {
     return Card(
       elevation: 6,
       margin: const EdgeInsets.all(20),
-      child: Row(
-        children: groupedTransactions.map((tra) {
-          // return Text("${tra["day"]} ${tra["value"]} - ");
-          return ChartBar(
-            value: tra["value"] as double,
-            percentage: (tra["value"] as double) / _weekTotalValue,
-            label: tra["day"].toString(),
-          );
-        }).toList(),
+      child: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: groupedTransactions.map((tra) {
+            return Flexible(
+              fit: FlexFit.tight,
+              child: ChartBar(
+                value: tra["value"] as double,
+                percentage: (tra["value"] as double) / _weekTotalValue,
+                label: tra["day"].toString(),
+              ),
+            );
+          }).toList(),
+        ),
       ),
     );
   }
