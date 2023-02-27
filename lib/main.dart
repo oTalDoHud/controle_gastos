@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:controle_gastos/components/chart.dart';
 import 'package:controle_gastos/components/transaction_form.dart';
 import 'package:flutter/material.dart';
@@ -55,38 +53,7 @@ class MyHomeApp extends StatefulWidget {
 }
 
 class _MyHomeAppState extends State<MyHomeApp> {
-  final List<Transaction> _transaction = [
-    // Transaction(
-    //   id: "t0",
-    //   title: "Conta antiga",
-    //   value: 400,
-    //   date: DateTime.now().subtract(const Duration(days: 33)),
-    // ),
-    // Transaction(
-    //   id: "t1",
-    //   title: "Novo Tênis de Corrida",
-    //   value: 125,
-    //   date: DateTime.now().subtract(const Duration(days: 3)),
-    // ),
-    // Transaction(
-    //   id: "t2",
-    //   title: "Conta de luz ",
-    //   value: 269,
-    //   date: DateTime.now().subtract(const Duration(days: 4)),
-    // ),
-    // Transaction(
-    //   id: "t3",
-    //   title: "Cartão ",
-    //   value: 469.88,
-    //   date: DateTime.now().subtract(const Duration(days: 5)),
-    // ),
-    // Transaction(
-    //   id: "t3",
-    //   title: "Lanche",
-    //   value: 11.30,
-    //   date: DateTime.now(),
-    // ),
-  ];
+  final List<Transaction> _transaction = [];
 
   List<Transaction> get _recentTransactions {
     return _transaction.where((tra) {
@@ -98,7 +65,9 @@ class _MyHomeAppState extends State<MyHomeApp> {
 
   _addTransaction(String title, double value, DateTime date) {
     final newTransaction = Transaction(
-      id: Random().nextDouble.toString(),
+      id: title.hashCode.toString() +
+          value.hashCode.toString() +
+          date.hashCode.toString(),
       title: title,
       value: value,
       date: date,
@@ -109,6 +78,12 @@ class _MyHomeAppState extends State<MyHomeApp> {
     });
 
     Navigator.of(context).pop();
+  }
+
+  _removeTransaction(String id) {
+    setState(() {
+      _transaction.removeWhere((tra) => tra.id == id);
+    });
   }
 
   _openTransactionFormModal(BuildContext context) {
@@ -136,7 +111,7 @@ class _MyHomeAppState extends State<MyHomeApp> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Chart(_recentTransactions),
-          TransactionList(_transaction),
+          TransactionList(_transaction, _removeTransaction),
         ],
       ),
       floatingActionButton: FloatingActionButton(
