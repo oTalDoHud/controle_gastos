@@ -12,7 +12,7 @@ Agradeço a sua visita e espero que este aplicativo seja útil e eficiente para 
 
 ## Aplicativo em execução
 ### Clique no vídeo 👇
-[![app_em_excucao](https://github.com/oTalDoHud/controle_gastos/blob/master/assets/app/Captura%20de%20tela%20de%202023-02-28%2018-03-26.png)](https://www.youtube.com/watch?v=H77kHg6QFw0&ab_channel=HudsonLucas)
+[![app_em_excucao](https://github.com/oTalDoHud/controle_gastos/blob/master/assets/app/Captura%20de%20tela%20de%202023-02-28%2018-03-26.png)](https://www.youtube.com/watch?v=H77kHg6QFw0&ab_channel=HudsonLucas){target="_blank"}
 
 ## Design
 ### Sem nenhuma conta
